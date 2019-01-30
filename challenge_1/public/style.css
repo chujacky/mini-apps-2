@@ -2,3 +2,27 @@
   border: grey solid 2px;
   margin: 5px;
 }
+
+ul{
+  list-style: none;
+  display: flex;
+  justify-content: 'space evenly';
+}
+
+li{
+  padding: 5px;
+  background-color: cyan;
+  margin: 2px;
+}
+
+input:focus, a:focus{
+  outline: none;
+}
+
+a {
+  cursor: pointer;
+}
+
+.active {
+  background-color: salmon;
+}

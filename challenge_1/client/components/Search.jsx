@@ -24,19 +24,12 @@ class Search extends React.Component {
     // e.target.reset();
     const { search } = this.state;
     const { response } = this.props;
-    axios.get(`/events?q=${search}`)
-      .then((results) => {
-        const { data } = results;
-        return data;
-      })
-      .then((data) => {
-        axios.get(`/events?q=${search}&_limit=10&_page=1`)
-          .then((events) => {
-            response(events.data, data.length, search);
-            this.setState({
-              search: '',
-            });
-          });
+    axios.get(`/events?q=${search}&_limit=10&_page=1`)
+      .then((events) => {
+        response(events.data, events.headers['x-total-count'], search);
+        this.setState({
+          search: '',
+        });
       })
       .catch((err) => {
         throw err;

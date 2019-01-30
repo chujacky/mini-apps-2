@@ -12,9 +12,10 @@ const Result = ({ results, pageCount, pageClick }) => {
         previousLabel="previous"
         nextLabel="next"
         pageCount={pageCount}
-        pageRangeDisplayed={5}
+        pageRangeDisplayed={3}
         marginPagesDisplayed={2}
         onPageChange={pageClick}
+        activeClassName="active"
       />
     </div>
   )
