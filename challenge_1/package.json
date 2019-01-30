@@ -4,7 +4,8 @@
   "description": "A single-page app that enables users to search and browse historical event information based ",
   "main": "index.js",
   "scripts": {
-    "react-dev": "webpack --watch --mode development"
+    "react-dev": "webpack --watch --mode development",
+    "start": "json-server --watch db.json"
   },
   "author": "Jacky Chu",
   "license": "ISC",
