@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import Options from './components/Options.jsx';
 
 class App extends React.Component {
   constructor() {
@@ -12,10 +13,11 @@ class App extends React.Component {
   render() {
     return (
       <div>
-        Hello World
+        <h2>Bitcoin Tracker</h2>
+        <Options />
       </div>
     );
   }
-};
+}
 
 ReactDOM.render(<App />, document.getElementById('app'));

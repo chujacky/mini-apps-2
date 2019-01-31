@@ -5,7 +5,7 @@
   "main": "server.js",
   "scripts": {
     "react-dev": "webpack --watch --mode=production",
-    "start": "node server.js"
+    "start": "nodemon server.js"
   },
   "author": "Jacky Chu",
   "license": "ISC",
@@ -18,8 +18,11 @@
     "webpack-cli": "^3.2.1"
   },
   "dependencies": {
+    "axios": "^0.18.0",
+    "cors": "^2.8.5",
     "express": "^4.16.4",
     "react": "^16.7.0",
-    "react-dom": "^16.7.0"
+    "react-dom": "^16.7.0",
+    "reactjs-popup": "^1.3.2"
   }
 }
