@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "react-dev": "webpack --watch --mode development",
-    "start": "json-server --watch data/db.json"
+    "start": "json-server --watch data/db.json --routes routes.json"
   },
   "author": "Jacky Chu",
   "license": "ISC",

@@ -26,3 +26,18 @@ a {
 .active {
   background-color: salmon;
 }
+
+.content{
+  padding: 10px;
+}
+
+button{
+  color: #fff !important;
+  text-transform: uppercase;
+  background: #19c1c7;
+  padding: 7px;
+  margin-left: 2px;
+  border-radius: 20px;
+  display: inline-block;
+  border: none; 
+}
