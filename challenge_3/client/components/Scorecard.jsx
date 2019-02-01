@@ -15,7 +15,7 @@ class Scorecard extends React.Component {
     return (
       <div id="scorecard">
         {scorecard.map((frameScore, index) => {
-          return <ScorecardFrame frameScore={frameScore} key={`frame${index}`} frame={index} />
+          return <ScorecardFrame frameScore={frameScore} key={`frame${index}`} frame ={frame} index={index} />
         })}
       </div>
     );
