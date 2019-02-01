@@ -14,7 +14,7 @@
 
 #scorecard{
   display: inline-grid;
-  grid-template-columns: 9% 9% 9% 9% 9% 9% 9% 9% 9% 9% 9%;
+  grid-template-columns: 10% 10% 10% 10% 10% 10% 10% 10% 10% 10%;
   width: 100%;
 }
 

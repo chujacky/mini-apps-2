@@ -3,7 +3,7 @@ import React from 'react';
 const ScorecardFrame = ({ frameScore, frame }) => {
   return (
     <div className="frame-box">
-      <div className="frame-label">{frame}</div>
+      <div className="frame-label">{frame + 1}</div>
       <div className="bowls-box">
         {frameScore.bowlScores.map((bowl, index) => {
           return (

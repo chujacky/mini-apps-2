@@ -16,7 +16,9 @@ class PinButtons extends React.Component {
 
   onButtonClick(e) {
     let { allPins, pinsLeft, firstBowl, pinsButton } = this.state;
+    const { bowl } = this.props;
     const pinsHit = Number(e.target.id);
+    bowl(pinsHit);
     if (firstBowl) {
       if (pinsHit === 10) {
         return;
