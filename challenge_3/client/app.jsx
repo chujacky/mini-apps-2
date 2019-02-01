@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import PinButtons from './components/PinButtons.jsx';
 
 class App extends React.Component {
   constructor() {
@@ -12,9 +13,10 @@ class App extends React.Component {
   render() {
     return (
       <div>
-        hello world
+        <h2>Bowling Scorecard</h2>
+        <PinButtons />
       </div>
-    )
+    );
   }
 }
 
