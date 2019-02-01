@@ -8,6 +8,7 @@ class Options extends React.Component {
       startDate: '',
       endDate: '',
       currency: 'USD',
+      invalid: false,
     };
     this.onChange = this.onChange.bind(this);
     this.onSubmit = this.onSubmit.bind(this);
@@ -31,12 +32,22 @@ class Options extends React.Component {
   }
   
   onSubmit(e) {
+    const { getPrices } = this.props;
     e.preventDefault();
     const { startDate, endDate, currency } = this.state;
-    
+    if (startDate > endDate) {
+      this.setState({
+        invalid: true,
+      });
+      return;
+    } 
+    this.setState({
+      invalid: false,
+    });  
     axios.get(`/prices/${startDate}/${endDate}/${currency}`)
       .then((response) => {
         console.log(response.data);
+        getPrices(response.data.bpi)
       })
       .catch((err) => {
         if (err) {
@@ -46,20 +57,27 @@ class Options extends React.Component {
   }
 
   render() {
+    const errorDisplay = {
+      display: this.state.invalid ? 'block' : 'none',
+      color: 'red',
+    };
     return (
-      <form onSubmit={this.onSubmit}>
-        <label>Start Date: </label>
-        <input name="startDate" type="date" onChange={this.onChange} />
-        <label>End Date: </label>
-        <input name="endDate" type="date" onChange={this.onChange} />
-        <label>Currency: </label>
-        <select name="currency" id="currency" onChange={this.onChange}>
-          <option value="USD">USD</option>
-          <option value="EUR">EUR</option>
-          <option value="GBP">GBP</option>
-        </select>
-        <button type="submit">Search</button>
-      </form>
+      <div>
+        <form onSubmit={this.onSubmit}>
+          <label>Start Date: </label>
+          <input name="startDate" type="date" onChange={this.onChange} required />
+          <label>End Date: </label>
+          <input name="endDate" type="date" onChange={this.onChange} required />
+          <label>Currency: </label>
+          <select name="currency" id="currency" onChange={this.onChange}>
+            <option value="USD">USD</option>
+            <option value="EUR">EUR</option>
+            <option value="GBP">GBP</option>
+          </select>
+          <button type="submit">Search</button>
+        </form>
+        <p style={errorDisplay}>Sorry, but your specified end date is before your start date.  Please check and try again.</p>
+      </div>
     );
   }
 }
