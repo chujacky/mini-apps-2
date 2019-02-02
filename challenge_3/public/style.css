@@ -1,0 +1,28 @@
+.frame-box{
+  border: 1px black solid;
+}
+
+.frame-label{
+  border-bottom: 2px black solid;
+  text-align: center;
+}
+
+.frame-total{
+ text-align: center;  
+}
+
+#scorecard{
+  display: inline-grid;
+  grid-template-columns: 10% 10% 10% 10% 10% 10% 10% 10% 10% 10%;
+  width: 100%;
+}
+
+.bowls-box{
+  display: flex;
+}
+
+.bowls-box div {
+  border-bottom: 1px solid black;
+  width: 50%;
+  text-align: center;
+}
